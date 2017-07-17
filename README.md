@@ -58,7 +58,7 @@ Available variables are listed below, along with default values.
           
 ## License
 
-BSD
+GPLv3
 
 ## Author Information
 

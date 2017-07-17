@@ -12,8 +12,8 @@ kmod_tpe_extras_ps: False
 kmod_tpe_extras_ps_gid: 0
 kmod_tpe_extras_restrict_setuid: False
 kmod_tpe_hardcoded_path: []
-kmod_tpe_kernel_dmesg_restrict: True
-kmod_tpe_kernel_modules_disabled: True
+kmod_tpe_kernel_dmesg_restrict: False
+kmod_tpe_kernel_modules_disabled: False
 kmod_tpe_kill: False
 kmod_tpe_lock: False
 kmod_tpe_log: True

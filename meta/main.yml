@@ -4,7 +4,7 @@ dependencies:
 galaxy_info:
   author: tkimball83
   description: RHEL/CentOS - Trusted Path Execution Linux Kernel Module
-  license: BSD
+  license: GPLv3
   min_ansible_version: 2.0
   platforms:
     - name: EL

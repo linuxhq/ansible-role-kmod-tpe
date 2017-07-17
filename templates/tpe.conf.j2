@@ -28,5 +28,5 @@ tpe.extras.harden_ptrace = {{ '0' if kmod_tpe_extras_harden_ptrace is defined an
 tpe.extras.hide_uname = {{ '1' if kmod_tpe_extras_hide_uname is defined and kmod_tpe_extras_hide_uname else '0' }}
 
 # You may also want to consider uncommenting these as well
-kernel.modules_disabled = {{ '0' if kmod_tpe_kernel_modules_disabled is defined and not kmod_tpe_kernel_modules_disabled else '1' }}
-kernel.dmesg_restrict = {{ '0' if kmod_tpe_kernel_dmesg_restrict is defined and not kmod_tpe_kernel_dmesg_restrict else '1' }}
+kernel.modules_disabled = {{ '1' if kmod_tpe_kernel_modules_disabled is defined and kmod_tpe_kernel_modules_disabled else '0' }}
+kernel.dmesg_restrict = {{ '1' if kmod_tpe_kernel_dmesg_restrict is defined and kmod_tpe_kernel_dmesg_restrict else '0' }}
