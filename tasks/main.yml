@@ -5,6 +5,7 @@
     enablerepo: elrepo
     name: kmod-tpe
     state: present
+    update_cache: yes
   register: kmod_tpe_yum
 
 - block:
