@@ -1,7 +1,7 @@
 ---
-kmod_tpe_admin_gid: False
+kmod_tpe_admin_gid: 0
 kmod_tpe_check_file: True
-kmod_tpe_dmz_gid: False
+kmod_tpe_dmz_gid: 0
 kmod_tpe_extras_harden_ptrace: True
 kmod_tpe_extras_hide_uname: False
 kmod_tpe_extras_ignore_softmode: False
@@ -25,7 +25,7 @@ kmod_tpe_paranoid: False
 kmod_tpe_softmode: False
 kmod_tpe_strict: True
 kmod_tpe_trusted_apps: []
-kmod_tpe_trusted_gid: False
+kmod_tpe_trusted_gid: 0
 kmod_tpe_trusted_invert: False
 kmod_tpe_xattr_soften: True
 ...

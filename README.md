@@ -12,9 +12,9 @@ None
 
 Available variables are listed below, along with default values.
 
-    kmod_tpe_admin_gid: False
+    kmod_tpe_admin_gid: 0
     kmod_tpe_check_file: True
-    kmod_tpe_dmz_gid: False
+    kmod_tpe_dmz_gid: 0
     kmod_tpe_extras_harden_ptrace: True
     kmod_tpe_extras_hide_uname: False
     kmod_tpe_extras_ignore_softmode: False
@@ -25,8 +25,8 @@ Available variables are listed below, along with default values.
     kmod_tpe_extras_ps_gid: 0
     kmod_tpe_extras_restrict_setuid: False
     kmod_tpe_hardcoded_path: []
-    kmod_tpe_kernel_dmesg_restrict: True
-    kmod_tpe_kernel_modules_disabled: True
+    kmod_tpe_kernel_dmesg_restrict: False
+    kmod_tpe_kernel_modules_disabled: False
     kmod_tpe_kill: False
     kmod_tpe_lock: False
     kmod_tpe_log: True
@@ -38,7 +38,7 @@ Available variables are listed below, along with default values.
     kmod_tpe_softmode: False
     kmod_tpe_strict: True
     kmod_tpe_trusted_apps: []
-    kmod_tpe_trusted_gid: False
+    kmod_tpe_trusted_gid: 0
     kmod_tpe_trusted_invert: False
     kmod_tpe_xattr_soften: True
 
