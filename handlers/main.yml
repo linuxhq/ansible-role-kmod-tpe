@@ -1,5 +1,6 @@
 ---
 - name: reload sysctl
   tags: kmod-tpe
+  become: true
   command: sysctl -p /etc/sysctl.d/tpe.conf
 ...

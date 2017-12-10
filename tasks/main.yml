@@ -1,6 +1,7 @@
 ---
 - name: Ensure that the kmod-tpe package is installed
   tags: kmod-tpe
+  become: true
   yum:
     enablerepo: elrepo
     name: kmod-tpe
@@ -9,7 +10,7 @@
   register: kmod_tpe_yum
 
 - block:
-    - name: Manually load the tpe kernel module
+    - name: Manually loading the tpe kernel module
       modprobe:
         name: tpe
         state: present
@@ -23,5 +24,6 @@
         mode: 0644
       notify: reload sysctl
   tags: kmod-tpe
+  become: true
   when: kmod_tpe_yum|success
 ...
