@@ -13,34 +13,34 @@ None
 Available variables are listed below, along with default values.
 
     kmod_tpe_admin_gid: 0
-    kmod_tpe_check_file: True
+    kmod_tpe_check_file: true
     kmod_tpe_dmz_gid: 0
-    kmod_tpe_extras_harden_ptrace: True
-    kmod_tpe_extras_hide_uname: False
-    kmod_tpe_extras_ignore_softmode: False
-    kmod_tpe_extras_log: True
-    kmod_tpe_extras_lsmod: True
-    kmod_tpe_extras_proc_kallsyms: True
-    kmod_tpe_extras_ps: False
+    kmod_tpe_extras_harden_ptrace: true
+    kmod_tpe_extras_hide_uname: false
+    kmod_tpe_extras_ignore_softmode: false
+    kmod_tpe_extras_log: true
+    kmod_tpe_extras_lsmod: true
+    kmod_tpe_extras_proc_kallsyms: true
+    kmod_tpe_extras_ps: false
     kmod_tpe_extras_ps_gid: 0
-    kmod_tpe_extras_restrict_setuid: False
+    kmod_tpe_extras_restrict_setuid: false
     kmod_tpe_hardcoded_path: []
-    kmod_tpe_kernel_dmesg_restrict: False
-    kmod_tpe_kernel_modules_disabled: False
-    kmod_tpe_kill: False
-    kmod_tpe_lock: False
-    kmod_tpe_log: True
+    kmod_tpe_kernel_dmesg_restrict: false
+    kmod_tpe_kernel_modules_disabled: false
+    kmod_tpe_kill: false
+    kmod_tpe_lock: false
+    kmod_tpe_log: true
     kmod_tpe_log_floodburst: 5
     kmod_tpe_log_floodtime: 5
     kmod_tpe_log_max: 50
-    kmod_tpe_log_verbose: True
-    kmod_tpe_paranoid: False
-    kmod_tpe_softmode: False
-    kmod_tpe_strict: True
+    kmod_tpe_log_verbose: true
+    kmod_tpe_paranoid: false
+    kmod_tpe_softmode: false
+    kmod_tpe_strict: true
     kmod_tpe_trusted_apps: []
     kmod_tpe_trusted_gid: 0
-    kmod_tpe_trusted_invert: False
-    kmod_tpe_xattr_soften: True
+    kmod_tpe_trusted_invert: false
+    kmod_tpe_xattr_soften: true
 
 ## Dependencies
 
@@ -51,15 +51,24 @@ Available variables are listed below, along with default values.
     - hosts: servers
       roles:
         - role: linuxhq.kmod-tpe
-          kmod_tpe_extras_proc_kallsyms: True
-          kmod_tpe_extras_ps: True
-          kmod_tpe_extras_lsmod: True
-          kmod_tpe_extras_restrict_setuid: True
+          kmod_tpe_extras_proc_kallsyms: true
+          kmod_tpe_extras_ps: true
+          kmod_tpe_extras_lsmod: true
+          kmod_tpe_extras_restrict_setuid: true
           
 ## License
 
-GPLv3
+Copyright (C) 2018 Taylor Kimball <tkimball@linuxhq.org>
 
-## Author Information
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-This role was created by [Taylor Kimball](http://www.linuxhq.org).
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
