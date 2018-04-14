@@ -8,13 +8,23 @@
     state: present
   register: kmod_tpe_yum
 
+- name: Attempting to determine if kernel.modules_disabled is enabled
+  tags: kmod-tpe
+  command: |
+    cat /proc/sys/kernel/modules_disabled
+  register: kmod_tpe_command
+  when: kmod_tpe_yum is success
+
 - name: Attempting to manually load the tpe kernel module
   tags: kmod-tpe
   become: true
   modprobe:
     name: tpe
     state: present
-  when: kmod_tpe_yum is success
+  register: kmod_tpe_modprobe
+  when:
+    - kmod_tpe_command.stdout != '1'
+    - kmod_tpe_yum is success
 
 - name: Applying tpe.conf configuration
   tags: kmod-tpe
@@ -26,5 +36,8 @@
     group: root
     mode: 0644
   notify: reload sysctl
-  when: kmod_tpe_yum is success
+  when:
+    - kmod_tpe_command.stdout != '1'
+    - kmod_tpe_modprobe is success
+    - kmod_tpe_yum is success
 ...

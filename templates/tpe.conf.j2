@@ -1,7 +1,7 @@
 # Uncomment a value to change it on module load
-tpe.log_floodburst = {{ kmod_tpe_log_floodburst }}
-tpe.log_floodtime = {{ kmod_tpe_log_floodtime }}
-tpe.log_max = {{ kmod_tpe_log_max }}
+tpe.log_floodburst = {{ kmod_tpe_log_floodburst|int }}
+tpe.log_floodtime = {{ kmod_tpe_log_floodtime|int }}
+tpe.log_max = {{ kmod_tpe_log_max|int }}
 tpe.log = {{ '1' if kmod_tpe_log|bool else '0' }}
 tpe.log_verbose = {{ '1' if kmod_tpe_log_verbose|bool else '0' }}
 tpe.kill = {{ '1' if kmod_tpe_kill|bool else '0' }}

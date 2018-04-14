@@ -1,12 +1,16 @@
 # ansible-role-kmod-tpe
 
 [![Build Status](https://travis-ci.org/linuxhq/ansible-role-kmod-tpe.svg?branch=master)](https://travis-ci.org/linuxhq/ansible-role-kmod-tpe)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-kmod--tpe-blue.svg?style=flat)](https://galaxy.ansible.com/linuxhq/kmod-tpe)
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](COPYING)
 
 RHEL/CentOS - Trusted Path Execution Linux Kernel Module
 
 ## Requirements
 
-None
+This role requires that you have the elrepo repository installed.
+
+ * https://galaxy.ansible.com/linuxhq/elrepo/
 
 ## Role Variables
 
@@ -44,7 +48,7 @@ Available variables are listed below, along with default values.
 
 ## Dependencies
 
- * https://galaxy.ansible.com/linuxhq/elrepo/
+None
 
 ## Example Playbook
 

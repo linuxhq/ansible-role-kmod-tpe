@@ -1,6 +1,5 @@
 ---
-dependencies:
-  - linuxhq.elrepo
+dependencies: []
 galaxy_info:
   author: tkimball83
   description: RHEL/CentOS - Trusted Path Execution Linux Kernel Module
@@ -9,11 +8,9 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 6
-        - 7
+        - all
   galaxy_tags:
     - kernel
     - security
-    - system
     - tpe
 ...
