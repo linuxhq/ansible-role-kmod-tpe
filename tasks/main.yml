@@ -8,11 +8,22 @@
     state: present
   register: kmod_tpe_yum
 
-- name: Attempting to determine if kernel.modules_disabled is enabled
+- name: Attempting to overlay kmod-tpe configuration
   tags: kmod-tpe
-  command: |
-    cat /proc/sys/kernel/modules_disabled
-  register: kmod_tpe_command
+  become: true
+  template:
+    src: tpe.conf.j2
+    dest: /etc/sysctl.d/tpe.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: kmod_tpe_yum is success
+
+- name: Attempting to fetch kernel modules_disabled setting
+  tags: kmod-tpe
+  slurp:
+    src: /proc/sys/kernel/modules_disabled
+  register: kmod_tpe_slurp
   when: kmod_tpe_yum is success
 
 - name: Attempting to manually load the tpe kernel module
@@ -23,21 +34,15 @@
     state: present
   register: kmod_tpe_modprobe
   when:
-    - kmod_tpe_command.stdout != '1'
+    - kmod_tpe_slurp.content|b64decode|trim == '0'
     - kmod_tpe_yum is success
 
-- name: Applying tpe.conf configuration
+- name: Attempting to reload sysctl upon module loading success
   tags: kmod-tpe
   become: true
-  template:
-    src: tpe.conf.j2
-    dest: /etc/sysctl.d/tpe.conf
-    owner: root
-    group: root
-    mode: 0644
-  notify: reload sysctl
+  command: |
+    sysctl -p /etc/sysctl.d/tpe.conf
   when:
-    - kmod_tpe_command.stdout != '1'
-    - kmod_tpe_modprobe is success
-    - kmod_tpe_yum is success
+    - kmod_tpe_modprobe is not skipped
+    - kmod_tpe_modprobe is not failed
 ...
