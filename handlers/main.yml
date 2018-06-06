@@ -1,0 +1,7 @@
+---
+- name: execute tpe-setfattr-whitelist
+  tags: kmod-tpe
+  become: true
+  command: |
+    /usr/sbin/tpe-setfattr-whitelist.sh
+...

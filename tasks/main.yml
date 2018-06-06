@@ -8,7 +8,26 @@
     state: present
   register: kmod_tpe_yum
 
-- name: Attempting to overlay kmod-tpe configuration
+- name: Attempting to overlay kmod-tpe sysconfig configurations
+  tags: kmod-tpe
+  become: true
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/sysconfig/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - tpe-exec-whitelist
+    - tpe-lsmod-whitelist
+    - tpe-mmap-whitelist
+    - tpe-mprotect-whitelist
+    - tpe-ptrace-whitelist
+    - tpe-setuid-whitelist
+    - tpe-uname-whitelist
+  when: kmod_tpe_yum is success
+
+- name: Attempting to overlay kmod-tpe sysctl.d configurations
   tags: kmod-tpe
   become: true
   template:

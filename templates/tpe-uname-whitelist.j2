@@ -1,0 +1,7 @@
+# {{ ansible_managed }}
+
+{% if kmod_tpe_uname_whitelist|length > 0 %}
+{%  for ktuw in kmod_tpe_uname_whitelist|sort %}
+{{ ktuw }}
+{%  endfor %}
+{% endif %}
