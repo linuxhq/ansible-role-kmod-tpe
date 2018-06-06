@@ -19,6 +19,7 @@ Available variables are listed below, along with default values.
     kmod_tpe_admin_gid: 0
     kmod_tpe_check_file: true
     kmod_tpe_dmz_gid: 0
+    kmod_tpe_exec_whitelist: []
     kmod_tpe_extras_harden_ptrace: true
     kmod_tpe_extras_hide_uname: false
     kmod_tpe_extras_ignore_softmode: false
@@ -28,9 +29,11 @@ Available variables are listed below, along with default values.
     kmod_tpe_extras_ps: false
     kmod_tpe_extras_ps_gid: 0
     kmod_tpe_extras_restrict_setuid: false
+    kmod_tpe_group_writable: true
     kmod_tpe_hardcoded_path: []
     kmod_tpe_kernel_dmesg_restrict: false
     kmod_tpe_kernel_modules_disabled: false
+    kmod_tpe_lsmod_whitelist: []
     kmod_tpe_kill: false
     kmod_tpe_lock: false
     kmod_tpe_log: true
@@ -38,12 +41,17 @@ Available variables are listed below, along with default values.
     kmod_tpe_log_floodtime: 5
     kmod_tpe_log_max: 50
     kmod_tpe_log_verbose: true
+    kmod_tpe_mmap_whitelist: []
+    kmod_tpe_mprotect_whitelist: []
     kmod_tpe_paranoid: false
+    kmod_tpe_ptrace_whitelist: []
+    kmod_tpe_setuid_whitelist: []
     kmod_tpe_softmode: false
     kmod_tpe_strict: true
     kmod_tpe_trusted_apps: []
     kmod_tpe_trusted_gid: 0
     kmod_tpe_trusted_invert: false
+    kmod_tpe_uname_whitelist: []
     kmod_tpe_xattr_soften: true
 
 ## Dependencies
@@ -55,10 +63,14 @@ None
     - hosts: servers
       roles:
         - role: linuxhq.kmod-tpe
-          kmod_tpe_extras_proc_kallsyms: true
+          kmod_tpe_extras_ignore_softmode: true
           kmod_tpe_extras_ps: true
-          kmod_tpe_extras_lsmod: true
+          kmod_tpe_extras_ps_gid: 10
           kmod_tpe_extras_restrict_setuid: true
+          kmod_tpe_group_writable: true
+          kmod_tpe_kernel_dmesg_restrict: true
+          kmod_tpe_strict: false
+          kmod_tpe_trusted_gid: 10
           
 ## License
 
