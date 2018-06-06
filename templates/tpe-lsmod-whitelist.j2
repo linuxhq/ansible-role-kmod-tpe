@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
-
 {% if kmod_tpe_lsmod_whitelist|length > 0 %}
-{%  for ktlw in kmod_tpe_lsmod_whitelist|sort %}
+
+{%   for ktlw in kmod_tpe_lsmod_whitelist|sort %}
 {{ ktlw }}
-{%  endfor %}
+{%   endfor %}
 {% endif %}

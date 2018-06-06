@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
-
 {% if kmod_tpe_ptrace_whitelist|length > 0 %}
-{%  for ktpw in kmod_tpe_ptrace_whitelist|sort %}
+
+{%   for ktpw in kmod_tpe_ptrace_whitelist|sort %}
 {{ ktpw }}
-{%  endfor %}
+{%   endfor %}
 {% endif %}
