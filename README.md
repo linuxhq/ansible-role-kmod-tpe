@@ -31,7 +31,7 @@ Available variables are listed below, along with default values.
     kmod_tpe_extras_restrict_setuid: false
     kmod_tpe_group_writable: true
     kmod_tpe_hardcoded_path: []
-    kmod_tpe_kernel_dmesg_restrict: false
+    kmod_tpe_kernel_dmesg_restrict: true
     kmod_tpe_kernel_modules_disabled: false
     kmod_tpe_lsmod_whitelist: []
     kmod_tpe_kill: false
