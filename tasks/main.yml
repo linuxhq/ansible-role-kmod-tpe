@@ -1,6 +1,6 @@
 ---
 - name: Ensure that the kmod-tpe package is installed
-  tags: kmod-tpe
+  tags: kmod_tpe
   become: true
   yum:
     enablerepo: elrepo
@@ -8,8 +8,8 @@
     state: present
   register: kmod_tpe_yum
 
-- name: Attempting to overlay kmod-tpe sysconfig configurations
-  tags: kmod-tpe
+- name: Attempting to overlay tpe sysconfig configurations
+  tags: kmod_tpe
   become: true
   template:
     src: "{{ item }}.j2"
@@ -28,8 +28,8 @@
     - tpe-uname-whitelist
   when: kmod_tpe_yum is success
 
-- name: Attempting to overlay kmod-tpe sysctl.d configurations
-  tags: kmod-tpe
+- name: Attempting to overlay tpe sysctl.d configurations
+  tags: kmod_tpe
   become: true
   template:
     src: tpe.conf.j2
@@ -40,14 +40,14 @@
   when: kmod_tpe_yum is success
 
 - name: Attempting to fetch kernel modules_disabled setting
-  tags: kmod-tpe
+  tags: kmod_tpe
   slurp:
     src: /proc/sys/kernel/modules_disabled
   register: kmod_tpe_slurp
   when: kmod_tpe_yum is success
 
 - name: Attempting to manually load the tpe kernel module
-  tags: kmod-tpe
+  tags: kmod_tpe
   become: true
   modprobe:
     name: tpe
@@ -58,7 +58,7 @@
     - kmod_tpe_yum is success
 
 - name: Attempting to reload sysctl upon module loading success
-  tags: kmod-tpe
+  tags: kmod_tpe
   become: true
   command: |
     sysctl -p /etc/sysctl.d/tpe.conf

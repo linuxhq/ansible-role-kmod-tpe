@@ -1,7 +1,7 @@
-# ansible-role-kmod-tpe
+# ansible-role-kmod_tpe
 
-[![Build Status](https://travis-ci.org/linuxhq/ansible-role-kmod-tpe.svg?branch=master)](https://travis-ci.org/linuxhq/ansible-role-kmod-tpe)
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-kmod--tpe-blue.svg?style=flat)](https://galaxy.ansible.com/linuxhq/kmod-tpe)
+[![Build Status](https://travis-ci.org/linuxhq/ansible-role-kmod_tpe.svg?branch=master)](https://travis-ci.org/linuxhq/ansible-role-kmod_tpe)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-kmod_tpe-blue.svg?style=flat)](https://galaxy.ansible.com/linuxhq/kmod_tpe)
 [![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](COPYING)
 
 RHEL/CentOS - Trusted Path Execution Linux Kernel Module
@@ -62,7 +62,7 @@ None
 
     - hosts: servers
       roles:
-        - role: linuxhq.kmod-tpe
+        - role: linuxhq.kmod_tpe
           kmod_tpe_extras_ignore_softmode: true
           kmod_tpe_extras_ps: true
           kmod_tpe_extras_ps_gid: 10

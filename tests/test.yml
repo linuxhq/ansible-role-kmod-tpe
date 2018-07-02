@@ -2,5 +2,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-role-kmod-tpe
+    - ansible-role-kmod_tpe
 ...
