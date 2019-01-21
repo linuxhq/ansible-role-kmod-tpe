@@ -12,13 +12,13 @@
   tags: kmod_tpe
   become: true
   template:
-    src: "{{ item }}.j2"
-    dest: "/etc/sysconfig/{{ item }}"
+    src: "{{ item + '.j2' }}"
+    dest: "{{ '/etc/sysconfig/' + item }}"
     owner: root
     group: root
     mode: 0644
   notify: execute tpe-setfattr-whitelist
-  with_items:
+  loop:
     - tpe-exec-whitelist
     - tpe-lsmod-whitelist
     - tpe-mmap-whitelist
